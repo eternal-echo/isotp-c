@@ -9,7 +9,7 @@
 /* The STmin parameter value specifies the minimum time gap allowed between 
  * the transmission of consecutive frame network protocol data units
  */
-#define ISO_TP_DEFAULT_ST_MIN       0
+#define ISO_TP_DEFAULT_ST_MIN       5
 
 /* This parameter indicate how many FC N_PDU WTs can be transmitted by the 
  * receiver in a row.
@@ -23,7 +23,7 @@
 
 /* Private: Determines if by default, padding is added to ISO-TP message frames.
  */
-#define ISO_TP_FRAME_PADDING
+// #define ISO_TP_FRAME_PADDING
 
 #endif
 
