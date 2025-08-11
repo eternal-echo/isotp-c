@@ -53,7 +53,10 @@ typedef struct IsoTpLink {
                                                      start at sending FC, receive CF 
                                                      end at receive FC */
     int                         receive_protocol_result;
-    uint8_t                     receive_status;                                                     
+    uint8_t                     receive_status;
+
+    /* user data */
+    void*                       user_data;
 } IsoTpLink;
 
 /**
@@ -65,10 +68,12 @@ typedef struct IsoTpLink {
  * @param sendbufsize The size of the buffer area.
  * @param recvbuf A pointer to an area in memory which can be used as a buffer for data to be received.
  * @param recvbufsize The size of the buffer area.
+ * @param user_data A pointer to user data.
  */
 void isotp_init_link(IsoTpLink *link, uint32_t sendid, 
                      uint8_t *sendbuf, uint16_t sendbufsize,
-                     uint8_t *recvbuf, uint16_t recvbufsize);
+                     uint8_t *recvbuf, uint16_t recvbufsize,
+                     void* user_data);
 
 /**
  * @brief Polling function; call this function periodically to handle timeouts, send consecutive frames, etc.
